@@ -18,3 +18,8 @@ export const MainButton = styled.button<MainButtonProps>`
     font-size: 16px;
     cursor: ${({disabled}) => disabled ? 'auto' : 'pointer'};
 `;
+
+export const Icon = styled.img`
+    height: 20px;
+    width: 20px;
+`
