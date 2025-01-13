@@ -1,6 +1,6 @@
 //Импортируем функцию с помощью которой создаем слайс
 import { createAppSlice } from "../../createAppSlice"
-import { FeedbackStateSlice } from "./types"
+import type { FeedbackStateSlice } from "./types"
 
 const feedbackInitialState: FeedbackStateSlice = {
   likesCount: 0,
