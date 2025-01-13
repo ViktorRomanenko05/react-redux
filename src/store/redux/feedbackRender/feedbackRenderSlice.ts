@@ -54,6 +54,18 @@ export const feedbackRenderSlice = createAppSlice({
         }
       },
     ),
+    //Обнуление результатов
+    resetResults: create.reducer(
+      (state: FeedbackRenderStateSlice, action: PayloadAction<string>) => {
+        const foundItem = state.feedbacks.find(
+          item => item.id === action.payload,
+        )
+        if (foundItem) {
+          foundItem.dislikesCount = 0;
+          foundItem.likesCount = 0;
+        }
+      },
+    )
   }),
 
   // Создаём селекторы позволяющие забрать значение из state в компонент

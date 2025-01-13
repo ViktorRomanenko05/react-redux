@@ -43,6 +43,11 @@ function FeedbackRender() {
     dispatch(feedbackRenderActions.plusDisLikes(id))
   }
 
+  //Определяем функцию сброса результата
+  const resetResult = () => {
+    dispatch(feedbackRenderActions.resetResults(id))
+  }
+
   return (
     <FeedbackWrapper key={id}>
       <Button
@@ -60,6 +65,11 @@ function FeedbackRender() {
         onClick={plusDislikes}
       />
       <FeedbackDisplay>{dislikesCount}</FeedbackDisplay>
+      <Button
+        name="Reset"
+        backgroundColor="lightblue"
+        onClick={resetResult}
+      />
     </FeedbackWrapper>
   )
 }
