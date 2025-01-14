@@ -3,7 +3,8 @@ import Button from "../../../components/Button/Button"
 
 import { HomePageWrapper, UserForm, UserFormName } from "./styles"
 import { useFormik } from "formik"
-import { UserFormNames, USER_FORM_VALUES } from "./types"
+import type { UserFormNames} from "./types";
+import { USER_FORM_VALUES } from "./types"
 import { useAppDispatch } from "../../../store/hooks"
 import { usersSliceActions } from "../../../store/redux/users/usersSlice"
 import { v4 } from 'uuid';
