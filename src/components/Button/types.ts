@@ -10,4 +10,5 @@ export interface ButtonProps {
     loading?: boolean;
     spinner?: ReactNode;
     backgroundColor?: string;
+    icon?: string;
 }

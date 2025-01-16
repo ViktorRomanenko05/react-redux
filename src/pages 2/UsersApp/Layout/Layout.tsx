@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-import { LayoutProps } from "./types"
+import type { LayoutProps } from "./types"
 import {
   LayoutWrapper,
   Header,
