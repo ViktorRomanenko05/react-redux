@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 //lessons
 // import Lesson16 from "./lessons/Lesson16/Lesson16"
 import Lesson17 from "./lessons/Lesson17/Lesson17"
+import FeedbackForm from "./components/FeedbackForm/FeedbackForm"
 
 //homeworks
 // import Homework16 from "./homeworks/Homework16/Homework16"
@@ -29,7 +30,8 @@ const App = () => {
         </Routes>
       </Layout> */}
       {/* <Homework16 /> */}
-      <Lesson17/>
+      {/*<Lesson17/>*/}
+      <FeedbackForm />
     </BrowserRouter>
   )
 }

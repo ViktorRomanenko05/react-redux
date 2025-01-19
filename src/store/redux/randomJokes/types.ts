@@ -1,5 +1,10 @@
+export interface RandomJoke {
+  id: string,
+  joke: string
+}
+
 export interface RandomJokesSliceState {
-  data: any,
+  data: RandomJoke[],
   error: any,
   status: 'default' | 'loading' | 'success' | 'error'
 }

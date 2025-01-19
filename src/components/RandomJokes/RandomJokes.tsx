@@ -1,9 +1,9 @@
 import Button from "../Button/Button";
 import Spinner from "../Spinner/Spinner";
-import { JokeCard, JokesContainer, RandomJokesWrapper, JokeText } from "./styles";
+import { JokeCard, JokesContainer, RandomJokesWrapper, JokeWrapper, JokeText } from "./styles";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { randomJokesSliceActions, randomJokesSliceSelectors } from "../../store/redux/randomJokes/randomJokesSlice";
-import { v4 } from "uuid";
+import type { RandomJoke } from "../../store/redux/randomJokes/types";
 
 function RandomJokes() {
   const dispatch = useAppDispatch();
@@ -20,8 +20,17 @@ function RandomJokes() {
   console.log(data);
 
 
-  const jokes = data.map((joke: any) => {
-    return <JokeText key={v4()}>{joke.setup} - {joke.punchline}</JokeText>
+  const jokes = data.map((joke: RandomJoke) => {
+    const deleteJoke = () => {
+      dispatch(randomJokesSliceActions.deleteJoke(joke.id))
+    }
+
+    return (
+      <JokeWrapper key={joke.id}>
+        <JokeText>{joke.joke}</JokeText>
+        <Button name='x' onClick={deleteJoke} />
+      </JokeWrapper>
+    )
   })
 
 
